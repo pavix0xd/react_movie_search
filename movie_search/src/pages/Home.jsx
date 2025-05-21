@@ -53,7 +53,7 @@ function Home() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button type="submit" className="search-button">
+        <button type="submit" className="search-btn">
           Search
         </button>
       </form>
