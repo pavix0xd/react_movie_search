@@ -2,7 +2,7 @@ import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
 import "../styles/Home.css";
 import { searchMovies, getPopularMovies } from "../services/api";
-import Pagination from "../components/Pagination" 
+import Pagination from "../components/Pagination";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +22,7 @@ function Home() {
         } else {
           data = await getPopularMovies(currentPage);
         }
-        
+
         setMovies(data.results);
         setTotalPages(data.total_pages);
         setError(null);
@@ -32,7 +32,7 @@ function Home() {
         setLoading(false);
       }
     };
-    
+
     loadMovies();
   }, [currentPage, searchQuery]);
 
@@ -61,22 +61,23 @@ function Home() {
         </button>
       </form>
 
-      <Pagination 
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-
-        {error && <div className="error-message">{error}</div>}
+      {error && <div className="error-message">{error}</div>}
 
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
-        <div className="movies-grid">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-        </div>
+        <>
+          <div className="movies-grid">
+            {movies.map((movie) => (
+              <MovieCard movie={movie} key={movie.id} />
+            ))}
+          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </>
       )}
     </div>
   );
