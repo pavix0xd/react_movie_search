@@ -156,7 +156,7 @@ function MovieDetails() {
           <div className="section">
             <h2>Similar Movies</h2>
             <div className="scrollable-list">
-              {movie.similar.results.slice(0, 6).map(similar => (
+              {movie.similar.results.slice(0, 10).map(similar => (
                 <Link to={`/movie/${similar.id}`} key={similar.id} className="similar-movie-link">
                   <div className="similar-item">
                     {similar.poster_path ? (
