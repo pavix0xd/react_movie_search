@@ -36,19 +36,19 @@ Easily search, filter, and discover movies, view details, cast & crew, and manag
 ### Installation
 
 1. **Clone the repository:**
-
-git clone https://github.com/yourusername/react-movie-explorer.git
-cd react-movie-explorer
-
+  ```
+  git clone https://github.com/yourusername/react-movie-explorer.git
+  cd react-movie-explorer
+  ```
 
 2. **Install dependencies:**
-
-npm install
-
-or
-
-yarn install
-
+  ```
+  npm install
+  
+  or
+  
+  yarn install
+  ```
 
 3. **Get your TMDb API key:**
 - Sign up at [TMDb](https://www.themoviedb.org/) and request an API key.
@@ -61,19 +61,16 @@ yarn install
   > If you use Create React App, use `REACT_APP_TMDB_API_KEY=...` instead.
 
 5. **Start the development server:**
-
-npm run dev
-
-or
-
-yarn dev
-
+  ```
+  npm run dev
+  
+  or
+  
+  yarn dev
+  ```
 
 6. **Visit:**  
 [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal)
-
----
-
 
 ---
 
