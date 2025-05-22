@@ -46,6 +46,7 @@ function Home() {
       setCurrentPage(newPage);
     }
   };
+  
   return (
     <div className="home">
       <form onSubmit={handleSearch} className="search-form">

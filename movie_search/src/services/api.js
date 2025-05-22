@@ -26,3 +26,11 @@ export const getMovieDetails = async (movieId) => {
   if (!response.ok) throw new Error("Movie not found");
   return response.json();
 };
+
+export const getTrendingMovies = async (page = 1) => {
+  const response = await fetch(
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`
+  );
+  const data = await response.json();
+  return data;
+};
