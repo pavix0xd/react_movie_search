@@ -1,4 +1,4 @@
-# React Movie Explorer
+# MovieDB
 
 A modern, responsive, and feature-rich movie web application built with React and [The Movie Database (TMDb) API](https://www.themoviedb.org/documentation/api).  
 Easily search, filter, and discover movies, view details, cast & crew, and manage your favorites—all in a sleek, cinematic interface.
