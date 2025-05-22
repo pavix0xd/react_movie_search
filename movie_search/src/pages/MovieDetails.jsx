@@ -75,7 +75,7 @@ function MovieDetails() {
             
             <p className="overview">{movie.overview}</p>
             
-            <div className="action-buttons">
+            <div>
               <button 
                 className={`favorite-btn ${isFavorite(movie.id) ? "active" : ""}`}
                 onClick={() => {
@@ -84,7 +84,7 @@ function MovieDetails() {
                     : addToFavorites(movie);
                 }}
               >
-                {isFavorite(movie.id) ? "❤️ Remove from Favorites" : "🤍 Add to Favorites"}
+                {isFavorite(movie.id) ? "❤︎" : "❤︎"}
               </button>
               
               {trailer && (
