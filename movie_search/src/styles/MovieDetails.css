@@ -92,15 +92,30 @@
   color: #fff;
 }
 
-.favorite-btn.active {
-  background: #e74c3c;
-}
-
 .watch-trailer-btn {
-  text-decoration: none;
-  display: flex;
+  display: inline-flex;           /* Only as wide as content, but still aligns icon/text */
   align-items: center;
   gap: 0.5rem;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  box-sizing: border-box;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.favorite-btn:hover, .watch-trailer-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.favorite-btn.active {
+  background: #e74c3c;
 }
 
 .section {
