@@ -18,6 +18,9 @@ const NavBar = () => {
         <NavLink to="/favorites" className="nav-link">
           Favorites
         </NavLink>
+        <NavLink to="/filter" className="nav-link">
+          Filter Movies
+        </NavLink>
       </div>
     </nav>
   );

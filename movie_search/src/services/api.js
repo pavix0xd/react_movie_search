@@ -34,3 +34,30 @@ export const getTrendingMovies = async (page = 1) => {
   const data = await response.json();
   return data;
 };
+
+export const getGenres = async () => {
+  const response = await fetch(
+    `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`
+  );
+  const data = await response.json();
+  return data.genres;
+};
+
+export const getFilteredMovies = async (filters = {}, page = 1) => {
+  const params = new URLSearchParams({
+    api_key: API_KEY,
+    page: page,
+    sort_by: filters.sortBy || 'popularity.desc' // Default sorting
+  });
+
+  // Add optional filters
+  if (filters.genres) params.append('with_genres', filters.genres);
+  if (filters.year) params.append('primary_release_year', filters.year);
+
+  const response = await fetch(
+    `${BASE_URL}/discover/movie?${params}`
+  );
+  return response.json();
+};
+
+
