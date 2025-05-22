@@ -66,6 +66,17 @@ button:hover, .search-btn:hover, .apply-filters-btn:hover {
   background: var(--accent-hover);
   color: #fff;
 }
+
+.search-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #e50914;   /* <-- Should be red by default */
+  color: black;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
 button:focus,
 button:focus-visible {
   outline: 3px solid var(--blue);
@@ -868,4 +879,19 @@ select {
 }
 .movies-grid > * {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+.search-btn {
+  background-color: #e50914 !important;
+  color: #fff !important;
+  border-radius: var(--radius);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+.search-btn:hover {
+  background-color: #b00610 !important;
+  color: #fff !important;
 }
