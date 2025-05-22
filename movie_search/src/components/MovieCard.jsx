@@ -1,4 +1,4 @@
-import "../styles/MovieCard.css";
+import "../main.css";
 import { useMovieContext } from "../contexts/MovieContext";
 import { Link } from "react-router-dom";
 

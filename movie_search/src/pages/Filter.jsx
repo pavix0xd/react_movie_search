@@ -1,6 +1,6 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
-import "../styles/Filter.css";
+import "../main.css";
 import { getFilteredMovies } from "../services/api";
 import Pagination from "../components/Pagination";
 import MovieFilters from "../components/MovieFilters";

@@ -1,6 +1,6 @@
 import MovieCard from "../components/MovieCard";
 import { useState, useEffect } from "react";
-import "../styles/Home.css";
+import "../main.css";
 import { searchMovies, getPopularMovies } from "../services/api";
 import Pagination from "../components/Pagination";
 
