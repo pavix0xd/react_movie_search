@@ -10,14 +10,17 @@ export const getPopularMovies = async (page = 1) => {
 };
 
 export const searchMovies = async (query, page = 1) => {
-  const response = await fetch(
-    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-      query
-    )}&page=${page}`
-  );
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&page=${page}`
+    );
+    if (!response.ok) throw new Error('Search failed');
+    return response.json();
+  } catch {
+    throw new Error('Failed to search movies');
+  }
 };
+
 
 export const getMovieDetails = async (movieId) => {
   const response = await fetch(

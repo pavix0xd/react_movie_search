@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import "../main.css";
 import { searchMovies, getPopularMovies } from "../services/api";
 import Pagination from "../components/Pagination";
+import SearchInput from "../components/SearchInput";
 
 function Home() {
-
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -37,34 +37,21 @@ function Home() {
     loadMovies();
   }, [currentPage, searchQuery]);
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    setCurrentPage(1); // Reset to first page on new search
-  };
-
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
   };
-  
+
   return (
     <div className="home">
-      <form onSubmit={handleSearch} className="search-form">
-        <input
-          type="text"
-          placeholder="Search for movies..."
-          className="search-input"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button type="submit" className="search-btn">
-          Search
-        </button>
-      </form>
-
+      <SearchInput
+        onSearch={(searchTerm) => {
+          setSearchQuery(searchTerm);
+          setCurrentPage(1);
+        }}
+      />
       {error && <div className="error-message">{error}</div>}
-
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
