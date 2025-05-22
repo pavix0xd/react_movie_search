@@ -63,4 +63,13 @@ export const getFilteredMovies = async (filters = {}, page = 1) => {
   return response.json();
 };
 
+export const getPersonDetails = async (personId) => {
+  const response = await fetch(
+    `${BASE_URL}/person/${personId}?api_key=${API_KEY}&append_to_response=movie_credits`
+  );
+  if (!response.ok) throw new Error("Person not found");
+  return response.json();
+};
+
+
 

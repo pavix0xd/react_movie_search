@@ -7,6 +7,7 @@ import { MovieProvider } from './contexts/MovieContext'
 import MovieDetails from './pages/MovieDetails'
 import Trending from './pages/Trending'
 import Filter from './pages/Filter'
+import PersonDetails from './pages/PersonDetails';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/person/:id" element={<PersonDetails />} />
         <Route path="/filter" element={<Filter />} />
       </Routes>
     </main>

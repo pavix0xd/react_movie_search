@@ -810,3 +810,31 @@ select {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+.person-details {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background: var(--secondary-bg, #232323);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.person-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.person-photo {
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.person-bio {
+  margin: 1.5rem 0;
+  color: #ccc;
+  line-height: 1.6;
+}
